@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🖍️ Real-Time Whiteboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="flex flex-col h-screen">
+    <!-- Header -->
+    <header class="bg-emerald-500 text-white p-4 text-center shadow">
+      <h1 class="text-2xl font-bold">🖍️ Real-Time Whiteboard</h1>
+    </header>
+
+    <!-- Controls -->
+    <div class="p-4 bg-white shadow flex flex-wrap items-center gap-4">
+      <label class="flex items-center gap-2">
+        <span>Color:</span>
+        <input type="color" id="colorPicker" class="h-8 w-8 p-0 border rounded" />
+      </label>
+      <label class="flex items-center gap-2">
+        <span>Size:</span>
+        <input type="range" id="sizePicker" min="1" max="20" value="4" />
+      </label>
+      <button id="clearBtn" class="btn">🗑️ Clear</button>
+    </div>
+
+    <!-- Whiteboard -->
+    <canvas id="whiteboard" class="flex-1 bg-white border-t"></canvas>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm p-2 bg-gray-200">Collaborative Whiteboard © 2025</footer>
+  </div>
+
+</body>
+</html>
